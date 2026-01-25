@@ -65,11 +65,11 @@ p {
 }
 
 .contenedor-info-pagina {
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     background-color: #282828;
     border-radius: 10px;
     margin: 10px;
@@ -88,22 +88,28 @@ p {
 }
 
 .artista {
+    width: 100%;
     display: flex;
     flex-direction: row;
 }
 
 .contenedor-info-general {
-    position: relative;
+    /* background-color: #11ff00; */
     width: 100%;
+    min-height: 100%;
+    position: relative;
+    padding: 0px 10px 10px 10px;
 }
 
 .info-general {
-    width: 100%;
-    height: 100%;
+    /* background-color: #d31e69ae; */
     position: absolute;
+    width: 100%;
+    min-height: 100%;
     top: 0px;
+    left: 0px;
     opacity: 0;
-    padding: 0px 20px 20px 20px;
+    padding: 0px 10px 10px 10px;
     transition: opacity 0.8s ease-in-out;
 }
 
@@ -136,18 +142,21 @@ p {
 
 .links-externos {
     width: 100%;
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0; */
     display: flex;
     justify-content: space-between;
-    padding: 0px 20px 20px 20px;
+    transform: scale(0);
+    transition: transform 0.8s linear;
+    /* background-color: #04a3dd; */
 }
 
 .links-externos img {
     width: 100%;
     max-width: 80px;
     border-radius: 15px;
+    padding: 5px;
     filter: grayscale(100%);
     transition: transform 0.5s linear, filter 1s linear;
 }
@@ -159,18 +168,23 @@ p {
 
 .imagen-artista {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     border-radius: 20px;
     min-width: 400px;
-    padding: 0px 10px 10px 10px;
+    /* padding: 0px 10px 10px 10px; */
     transition: filter 1s linear, opacity 1s linear;
 }
 
 .contenedor-info-general:hover .info-general {
     opacity: 1;
+    user-select: none;
 }
 
-.contenedor-info-general:hover .imagen-artista{
+.contenedor-info-general:hover .links-externos {
+    transform: scale(1);
+}
+
+.contenedor-info-general:hover .imagen-artista {
     filter: blur(3px) grayscale(100%);
     opacity: 0.3;
 }
@@ -255,7 +269,6 @@ footer {
         margin: auto;
         width: 100%;
         height: auto;
-        border-radius: 5%;
     }
 
     .info-artista, .info-general {
@@ -273,9 +286,8 @@ footer {
         justify-content: center;
     }
 
-    .contenedor-info-pagina {
-        justify-content: none;
-        height: auto;
+    .info-general {
+        font-size: 0.9em;
     }
 
     .barra-navegacion a {
@@ -288,15 +300,16 @@ footer {
     .imagen-artista {
         width: 100%;
         min-width: 300px;
-        height: auto;
-        border-radius: 5%;
     }
-    .links-externos img {
-        max-width: 90px;
-        padding: 5px;
-    }  
+
+    .contenedor-info-general {
+        overflow: hidden;
+    }
 
     .info-artista {
         font-size: 1em;
+    }
+    .links-externos img{
+        max-width: 60px;
     }
 }
