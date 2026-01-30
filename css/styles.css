@@ -11,6 +11,7 @@ body {
     font-family: "Century Gothic", "Tahoma", "Geneva";
     font-size: 1rem;
 }
+
 p {
     line-height: 1.5;
 }
@@ -20,25 +21,32 @@ p {
     /* border: solid 1px #d31e69; */
 }
 
+::selection{
+    background-color: blueviolet;
+}
+
+ul {
+    padding-left: 15px;
+}
+
+li {
+    line-height: 1.5;
+}
+
 .barra-navegacion {
+    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding: 10px;
+    padding-top: 10px;
     /* position: sticky;
     top: 0px; */
     z-index: 1;
     transition: opacity 0.5s linear;
 }
 
-.barra-navegacion-no-visible {
-    opacity: 0;
-}
-
 .barra-navegacion a {
-    display: inline-block;
     text-decoration: none;
-    padding: 10px;
+    padding: 0px 5px 5px 5px;
     color: white;
     transition: transform 0.5s linear;
 }
@@ -55,8 +63,7 @@ p {
 
 
 .logotipo {
-    width: 50px;
-    height: 50px;
+    max-width: 50px;
     transition: transform 1s ease-in-out;
 }
 
@@ -79,24 +86,24 @@ p {
     text-align: center;
     font-size: 3em;
     padding: 10px;
-    text-shadow: 
-    0 0 5px #fb0b6f,
-    0 0 10px #fb0b6f,
-    0 0 20px #fb0b6f,
-    0 0 40px #d31e69,
-    0 0 80px #d31e69;
+    text-shadow:
+    0 0 5px #04BCFF,
+    0 0 10px #04BCFF,
+    0 0 20px #04BCFF,
+    0 0 40px #04a3dd,
+    0 0 80px #04a3dd;
 }
 
 .artista {
     width: 100%;
     display: flex;
-    flex-direction: row;
 }
 
 .contenedor-info-general {
     /* background-color: #11ff00; */
     width: 100%;
     min-height: 100%;
+    max-width: 450px;
     position: relative;
     padding: 0px 10px 10px 10px;
 }
@@ -109,6 +116,7 @@ p {
     top: 0px;
     left: 0px;
     opacity: 0;
+    user-select: none;
     padding: 0px 10px 10px 10px;
     transition: opacity 0.8s ease-in-out;
 }
@@ -171,13 +179,14 @@ p {
     min-height: 100%;
     border-radius: 20px;
     min-width: 400px;
+    max-width: 450px;
     /* padding: 0px 10px 10px 10px; */
     transition: filter 1s linear, opacity 1s linear;
 }
 
 .contenedor-info-general:hover .info-general {
     opacity: 1;
-    user-select: none;
+    user-select: auto;
 }
 
 .contenedor-info-general:hover .links-externos {
@@ -239,7 +248,6 @@ p {
     margin-top: 0;
 }
 
-
 footer {
     padding: 1rem;
     text-align: center;
@@ -264,19 +272,26 @@ footer {
     .nombre-artista {
         text-align: center;
     }
+    .contenedor-info-general {
+        max-width: none;
+    }
     .imagen-artista {
         display: block; 
         margin: auto;
         width: 100%;
+        max-width: none;
         height: auto;
     }
 
     .info-artista, .info-general {
         font-size: 1.2em;
     }
+    .links-externos {
+        justify-content: space-around;
+    }
 
     .links-externos img {
-        max-width: 150px;
+        max-width: 100px;
     }   
 }
 
@@ -286,13 +301,19 @@ footer {
         justify-content: center;
     }
 
+    .barra-navegacion a {
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    .logotipo {
+        width: 45px;
+    }
+
     .info-general {
         font-size: 0.9em;
     }
 
-    .barra-navegacion a {
-        text-align: center;
-    }
     .artista {
         flex-direction: column;
     }
@@ -309,6 +330,7 @@ footer {
     .info-artista {
         font-size: 1em;
     }
+
     .links-externos img{
         max-width: 60px;
     }
