@@ -16,5 +16,26 @@ function activarAnimacionEnlaces() {
                 album.className = "album animacion-color";
             }
         })
-    }, 2000);
+    }, 5000);
 }
+
+// function animacionImagenArtista() {
+//     const contenedoresInfoGeneral = document.querySelectorAll(".contenedor-info-general");
+//     const contenedorInfo = document.querySelectorAll(".info-general");
+//     let activado = 0;
+
+//     if (!contenedoresInfoGeneral) return;
+//     setInterval(() => {
+//         activado += 1;
+//         if (activado > 2) activado = 0;
+//         contenedoresInfoGeneral.forEach((contenedor) =>{
+
+//             if (activado == 1) {
+//                 contenedor.style.transform = "scale(0.95)";
+//             } else if (activado == 2) {
+//                 contenedor.style.transform = "scale(1.0)";
+//             }
+//         })
+//     }, 1000);
+
+// }

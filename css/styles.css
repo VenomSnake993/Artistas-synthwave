@@ -1,19 +1,24 @@
 html {
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-    margin: 0;
     display: flex;
     flex-direction: column;
     background-color: black;
     color: white;
     font-family: "Century Gothic", "Tahoma", "Geneva";
-    font-size: 1rem;
 }
 
 p {
     line-height: 1.5;
+}
+
+cite {
+    font-weight: bold;
 }
 
 * {
@@ -38,9 +43,6 @@ li {
     display: flex;
     align-items: center;
     padding-top: 10px;
-    /* position: sticky;
-    top: 0px; */
-    z-index: 1;
     transition: opacity 0.5s linear;
 }
 
@@ -100,16 +102,15 @@ li {
 }
 
 .contenedor-info-general {
-    /* background-color: #11ff00; */
     width: 100%;
     min-height: 100%;
     max-width: 450px;
     position: relative;
     padding: 0px 10px 10px 10px;
+    transition: transform 1s ease-in-out;
 }
 
 .info-general {
-    /* background-color: #d31e69ae; */
     position: absolute;
     width: 100%;
     min-height: 100%;
@@ -124,6 +125,8 @@ li {
 .info-general h2, h3 {
     margin-top: 10px;
     text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 
 .info-general h2 {
@@ -146,18 +149,16 @@ li {
 
 .info-general p {
     text-align: justify;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 
 .links-externos {
     width: 100%;
-    /* position: absolute;
-    bottom: 0;
-    left: 0; */
     display: flex;
     justify-content: space-between;
     transform: scale(0);
     transition: transform 0.8s linear;
-    /* background-color: #04a3dd; */
 }
 
 .links-externos img {
@@ -180,13 +181,20 @@ li {
     border-radius: 20px;
     min-width: 400px;
     max-width: 450px;
-    /* padding: 0px 10px 10px 10px; */
     transition: filter 1s linear, opacity 1s linear;
 }
 
 .contenedor-info-general:hover .info-general {
     opacity: 1;
     user-select: auto;
+}
+
+.contenedor-info-general:hover .info-general p {
+    opacity: 1;
+}
+
+.contenedor-info-general:hover .info-general h2,.contenedor-info-general:hover .info-general h3 {
+    opacity: 1;
 }
 
 .contenedor-info-general:hover .links-externos {
@@ -210,7 +218,7 @@ li {
     text-decoration: none;
     padding: 5px;
     color: white;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, text-shadow 1s ease-in-out;
 }
 
 .animacion-color {
@@ -255,7 +263,7 @@ footer {
 
 /* ################################################################## */
 /* Tableta */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: 1024px) {
     .barra-navegacion {
         justify-content: center;
     }
