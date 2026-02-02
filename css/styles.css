@@ -2,15 +2,23 @@ html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-size: 16px;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 body {
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     background-color: black;
     color: white;
-    font-family: "Century Gothic", "Tahoma", "Geneva";
+    font-family: "Century Gothic", "Tahoma", "Geneva", sans-serif;
+}
+
+h1, h2, h3, .barra-navegacion a {
+    font-family: "Audiowide", "Century Gothic", "Tahoma", "Geneva", sans-serif;
 }
 
 p {
@@ -21,10 +29,9 @@ cite {
     font-weight: bold;
 }
 
-* {
-    box-sizing: border-box;
-    /* border: solid 1px #d31e69; */
-}
+/* * {
+    border: solid 1px #d31e69;
+} */
 
 ::selection{
     background-color: blueviolet;
@@ -36,6 +43,18 @@ ul {
 
 li {
     line-height: 1.5;
+}
+
+.titulo {
+    text-align: center;
+    font-size: larger;
+    text-shadow:
+    /* posicion Horizontal | Posicion Vertical | blur | Color */
+    0 0 5px #ff00d0,
+    0 0 10px #ff00d0,
+    0 0 20px #ff00d0,
+    0 0 40px #d805b1,
+    0 0 80px #d805b1;
 }
 
 .barra-navegacion {
@@ -51,6 +70,7 @@ li {
     padding: 0px 5px 5px 5px;
     color: white;
     transition: transform 0.5s linear;
+    font-size: 1em;
 }
 
 .barra-navegacion a:hover {
@@ -80,6 +100,8 @@ li {
     align-items: center;
     justify-content: center;
     background-color: #282828;
+    background-image: linear-gradient(black, #2B003F,#2B003F, black);
+
     border-radius: 10px;
     margin: 10px;
 }
@@ -118,7 +140,7 @@ li {
     left: 0px;
     opacity: 0;
     user-select: none;
-    padding: 0px 10px 10px 10px;
+    padding: 0px 20px 20px 20px;
     transition: opacity 0.8s ease-in-out;
 }
 
@@ -203,7 +225,7 @@ li {
 
 .contenedor-info-general:hover .imagen-artista {
     filter: blur(3px) grayscale(100%);
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .info-artista {
