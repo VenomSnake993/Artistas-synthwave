@@ -74,6 +74,7 @@ li {
 }
 
 .barra-navegacion a:hover {
+    font-weight: bold;
     text-shadow: 
     0 0 5px #04BCFF,
     0 0 10px #04BCFF,
@@ -101,9 +102,8 @@ li {
     justify-content: center;
     background-color: #282828;
     background-image: linear-gradient(black, #2B003F,#2B003F, black);
-
     border-radius: 10px;
-    margin: 10px;
+    gap: 10px;
 }
 
 .nombre-artista {
@@ -133,9 +133,12 @@ li {
 }
 
 .info-general {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: absolute;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     top: 0px;
     left: 0px;
     opacity: 0;
@@ -281,6 +284,17 @@ li {
 footer {
     padding: 1rem;
     text-align: center;
+}
+
+address {
+    display: inline;
+}
+
+address a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+
 }
 
 /* ################################################################## */
